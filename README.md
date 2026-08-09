@@ -1,63 +1,42 @@
-# Système explicable d'aide à la décision — Prédiction du risque de mortalité en soins intensifs
+# Portfolio technique — Intelligence artificielle appliquée à la santé
 
-Projet individuel de portfolio technique, réalisé dans le cadre d'une candidature au doctorat en génie, axée sur l'intelligence artificielle appliquée à la santé numérique.
+Portfolio de projets individuels explorant l'application de l'intelligence artificielle aux données de santé — aide à la décision clinique, IA explicable, traitement du signal biomédical et vision par ordinateur appliquée à la surveillance de patients.
 
-## Objectif
+Ce portfolio est **évolutif** : de nouveaux projets y sont ajoutés au fil de mon parcours de recherche.
 
-Construire un modèle de prédiction du risque de mortalité en soins intensifs à partir de données cliniques multimodales (signes vitaux, résultats de laboratoire, descripteurs généraux), puis **expliquer** chaque prédiction avec SHAP — afin de produire une sortie interprétable, proche de ce qu'un système d'aide à la décision clinique (SIADC) devrait fournir à un professionnel de la santé.
+## Axes explorés
 
-Ce projet illustre trois axes de recherche qui m'intéressent particulièrement :
-- la **fusion de données cliniques multimodales**,
-- la **prédiction du risque** par apprentissage automatique,
-- et surtout l'**explicabilité clinique** des prédictions, pour produire une recommandation interprétable plutôt qu'un score opaque.
+- Systèmes d'aide à la décision clinique (SIADC)
+- Intelligence artificielle explicable (XAI)
+- Fusion de données cliniques multimodales
+- Traitement du signal biomédical
+- Vision par ordinateur appliquée à la santé
 
-## Jeu de données
+## Projets
 
-**PhysioNet/Computing in Cardiology Challenge 2012** — *Predicting Mortality of ICU Patients* (Silva et al., 2012).
-4 000 séjours en soins intensifs adultes (Training Set A), avec :
-- 48 heures de séries temporelles cliniques (37 variables : fréquence cardiaque, pression artérielle, créatinine, glucose, etc.)
-- 5 descripteurs généraux (âge, sexe, taille, poids, type d'unité de soins)
-- Une étiquette binaire : décès intra-hospitalier ou non
+### [01 — Système explicable d'aide à la décision : prédiction du risque de mortalité en soins intensifs](./01-clinical-decision-support-icu-mortality)
 
-Jeu de données en accès libre, sans processus d'accréditation.
+Prédiction du risque de mortalité en soins intensifs à partir de données cliniques multimodales (signes vitaux, laboratoire, descripteurs généraux), avec explicabilité des prédictions par SHAP.
 
-## Méthodologie
+**Résultats clés** : AUROC de 0,887 (XGBoost) · le modèle identifie spontanément le score de Glasgow comme facteur déterminant, cohérent avec les connaissances cliniques établies.
 
-1. **Agrégation des séries temporelles** — chaque variable clinique est résumée par patient (min, max, moyenne, dernière valeur mesurée sur 48h)
-2. **Modélisation** — comparaison de deux modèles : Random Forest (référence) et XGBoost
-3. **Évaluation** — AUROC, précision/rappel, matrice de confusion
-4. **Explicabilité (SHAP)** — importance globale des variables + explication individuelle par patient
-5. **Traduction en langage clair** — transformation des valeurs SHAP en recommandation textuelle simple, destinée à un professionnel de la santé
+**Outils** : Python, scikit-learn, XGBoost, SHAP
 
-## Résultats
+---
 
-| Modèle | AUROC | Rappel (classe Décès) |
-|---|---|---|
-| Random Forest | 0,863 | 0,58 |
-| **XGBoost** | **0,887** | 0,57 |
+### [02 — Vision par ordinateur et traitement du signal pour la surveillance de patients](./02-vision-signal-processing-healthcare)
 
-**Validation clinique du modèle** : l'analyse SHAP identifie spontanément le score de Glasgow (GCS) comme le facteur le plus déterminant dans les prédictions — un indicateur de gravité largement reconnu en soins intensifs (composante centrale de scores cliniques établis comme l'APACHE ou le SAPS). Cette cohérence avec les connaissances médicales existantes suggère que le modèle capte un signal clinique réel, plutôt qu'une corrélation statistique fortuite.
+Deux cas d'usage complémentaires : quantification du mouvement par suivi de points-clés corporels sur vidéo (MediaPipe), et détection/classification de battements cardiaques à partir d'un signal ECG (filtrage, détection de pics, classification).
 
-## Limites assumées
+**Résultats clés** : détection des pics R avec un écart de 0,1 % par rapport à l'annotation experte · classification normal/anormal avec AUROC de 0,999 (limite méthodologique assumée : partage entraînement/test par battement plutôt que par patient — voir le README du projet).
 
-- Population adulte, et non pédiatrique
-- Analyse rétrospective sur données statiques, plutôt qu'un traitement en temps réel
-- Agrégation simple des séries temporelles (min/max/moyenne), plutôt qu'une modélisation séquentielle (LSTM, Transformer) — un choix délibéré pour un prototype réalisable en quelques jours
+**Outils** : Python, OpenCV, MediaPipe, SciPy, scikit-learn, wfdb
 
-## Pistes futures
+---
 
-- Modélisation séquentielle des séries temporelles plutôt que leur agrégation
-- Interface interactive (Streamlit/Gradio) pour simuler un usage clinique
-- Extension à des données multimodales incluant de l'imagerie
-
-## Outils utilisés
-
-Python · pandas · scikit-learn · XGBoost · SHAP · Google Colab
-
-## Exécution
-
-Le notebook est autonome et conçu pour tourner sur Google Colab : ouvrir `SIADC_explicable_portfolio_v1.ipynb`, exécuter les cellules dans l'ordre (le téléchargement des données et l'installation des dépendances sont inclus dans le notebook).
+*D'autres projets seront ajoutés au fil du temps. Chaque dossier contient son propre README détaillé (méthodologie, résultats, limites assumées).*
 
 ## Auteur
 
 Dini Ahamada
+
