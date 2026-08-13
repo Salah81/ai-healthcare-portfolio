@@ -1,4 +1,4 @@
-# 03 — AR-Ultrasound Probe: 3D Medical Imaging Pipeline
+# AR-Ultrasound Probe: 3D Medical Imaging Pipeline
 
 **Auteur:** Dini Ahamada
 ## Objectif
