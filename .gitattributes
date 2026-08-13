@@ -1,0 +1,8 @@
+# Force LF pour tous les fichiers texte dans le repo
+* text=auto eol=lf
+
+# Fichiers binaires (pas de conversion)
+*.png binary
+*.jpg binary
+*.npy binary
+*.npz binary
