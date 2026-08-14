@@ -1,6 +1,6 @@
 # Portfolio technique — Intelligence artificielle appliquée à la santé
 
-Portfolio de projets individuels explorant l'application de l'intelligence artificielle aux données de santé — aide à la décision clinique, IA explicable, traitement du signal biomédical et vision par ordinateur appliquée à la surveillance de patients.
+Portfolio de projets individuels explorant l'application de l'intelligence artificielle aux données de santé — aide à la décision clinique, IA explicable, traitement du signal biomédical, vision par ordinateur appliquée à la surveillance de patients, et visualisation 3D / réalité augmentée pour l'imagerie médicale.
 
 Ce portfolio est **évolutif** : de nouveaux projets y sont ajoutés au fil de mon parcours de recherche.
 
@@ -11,6 +11,7 @@ Ce portfolio est **évolutif** : de nouveaux projets y sont ajoutés au fil de m
 - Fusion de données cliniques multimodales
 - Traitement du signal biomédical
 - Vision par ordinateur appliquée à la santé
+- Visualisation 3D et réalité augmentée pour l'imagerie médicale
 
 ## Projets
 
@@ -34,9 +35,18 @@ Deux cas d'usage complémentaires : quantification du mouvement par suivi de poi
 
 ---
 
+### [03 — Pipeline de réalité augmentée pour l'imagerie par ultrasons : preuve de concept](./03-ar-ultrasound-imaging)
+
+Pipeline complète couvrant les trois composantes d'un système de RA pour l'échographie : segmentation de structures anatomiques sur un phantom 3D synthétique, visualisation 3D par isosurfaces (VTK/PyVista), et simulation d'un overlay AR guidant le positionnement de la sonde.
+
+**Résultats clés** : segmentation validée quantitativement contre une vérité terrain (Dice de 0,99 pour le foie, 0,87 pour la lésion, 0,86 pour le vaisseau) · rendu 3D par isosurfaces des structures segmentées (limite méthodologique assumée : suivi de sonde paramétrique plutôt que dérivé d'un algorithme de tracking réel — voir le README du projet).
+
+**Outils** : Python, scikit-image, OpenCV, PyVista/VTK
+
+---
+
 *D'autres projets seront ajoutés au fil du temps. Chaque dossier contient son propre README détaillé (méthodologie, résultats, limites assumées).*
 
 ## Auteur
 
 Dini Ahamada
-
