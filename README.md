@@ -1,6 +1,6 @@
 # Portfolio technique — Intelligence artificielle appliquée à la santé
 
-Portfolio de projets individuels explorant l'application de l'intelligence artificielle aux données de santé — aide à la décision clinique, IA explicable, traitement du signal biomédical, vision par ordinateur appliquée à la surveillance de patients, et visualisation 3D / réalité augmentée pour l'imagerie médicale.
+Portfolio de projets individuels explorant l'application de l'intelligence artificielle aux données de santé — aide à la décision clinique, IA explicable, traitement du signal biomédical, vision par ordinateur, deep learning pour l'imagerie médicale, segmentation tumorale, analyse quantitative d'images et visualisation 3D / réalité augmentée pour l'imagerie médicale.
 
 Ce portfolio est **évolutif** : de nouveaux projets y sont ajoutés au fil de mon parcours de recherche.
 
@@ -12,6 +12,8 @@ Ce portfolio est **évolutif** : de nouveaux projets y sont ajoutés au fil de m
 - Traitement du signal biomédical
 - Vision par ordinateur appliquée à la santé
 - Visualisation 3D et réalité augmentée pour l'imagerie médicale
+- Deep learning pour l'imagerie médicale
+- Segmentation tumorale et analyse quantitative d'images médicales
 
 ## Projets
 
@@ -42,6 +44,20 @@ Pipeline complète couvrant les trois composantes d'un système de RA pour l'éc
 **Résultats clés** : segmentation validée quantitativement contre une vérité terrain (Dice de 0,99 pour le foie, 0,87 pour la lésion, 0,86 pour le vaisseau) · rendu 3D par isosurfaces des structures segmentées (limite méthodologique assumée : suivi de sonde paramétrique plutôt que dérivé d'un algorithme de tracking réel — voir le README du projet).
 
 **Outils** : Python, scikit-image, OpenCV, PyVista/VTK
+
+---
+
+### [04 — LiverAI : segmentation de tumeurs hépatiques par deep learning et analyse de résultats](https://github.com/Salah81/ai-healthcare-portfolio/tree/main/04-liver-tumor-deep-learning)
+
+Pipeline de recherche reproductible reliant **segmentation tumorale par U-Net**, analyse quantitative de la tumeur et modélisation prédictive au niveau patient. Le projet comprend un générateur déterministe d'images CT synthétiques, une architecture U-Net 2D en PyTorch, l'extraction de caractéristiques morphologiques et d'intensité, ainsi qu'un pipeline de prédiction de résultats cliniques servant de preuve de concept méthodologique.
+
+**Résultats clés** : segmentation sur données synthétiques avec **Dice de 0,892 ± 0,052**, **IoU de 0,808** et **HD95 de 1,0 pixel** · pipeline de prédiction aval fonctionnel avec **AUROC de 0,937** et **accuracy de 0,813** sur des labels synthétiques. Ces résultats valident la reproductibilité et le fonctionnement du pipeline logiciel, mais **ne constituent pas des performances cliniques**.
+
+Le projet inclut également une visualisation détaillée des **vrais positifs, faux positifs et faux négatifs**, une courbe d'entraînement reproductible, des tests automatisés et une intégration continue GitHub Actions.
+
+**Orientation recherche** : extension vers des données CT hépatiques réelles, segmentation 3D/2.5D, combinaison de représentations profondes et de caractéristiques radiomiques, puis modélisation longitudinale de la progression tumorale.
+
+**Outils** : Python, PyTorch, NumPy, SciPy, scikit-learn, Matplotlib, pytest, GitHub Actions
 
 ---
 
