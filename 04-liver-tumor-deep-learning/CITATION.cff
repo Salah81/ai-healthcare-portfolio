@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this research prototype, please cite the repository."
+title: "LiverAI: Deep Learning for Liver Tumor Segmentation and Quantitative Analysis"
+type: software
+authors:
+  - family-names: "Ahamada"
+    given-names: "Dini"
+version: 0.1.0

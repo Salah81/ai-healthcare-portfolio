@@ -1,0 +1,39 @@
+{
+  "scope": "synthetic software-validation demo only; not clinical performance",
+  "device": "cpu",
+  "n_cases": 64,
+  "epochs": 20,
+  "segmentation": {
+    "dice_mean": 0.8915313324432089,
+    "dice_std": 0.0515274775947791,
+    "iou_mean": 0.8080846606588412,
+    "hd95_mean_pixels": 1.0
+  },
+  "outcome_proxy": {
+    "auc": 0.9365079365079365,
+    "accuracy": 0.8125,
+    "warning": "Outcome labels are synthetic and generated partly from tumour burden; this metric validates code flow only."
+  },
+  "training_loss": [
+    1.7899334629376729,
+    1.6968145966529846,
+    1.642091691493988,
+    1.6010130842526753,
+    1.5688015619913738,
+    1.5456747810045879,
+    1.5255781213442485,
+    1.5075612664222717,
+    1.4903289477030437,
+    1.4732269247372944,
+    1.458926022052765,
+    1.442506472269694,
+    1.4275182485580444,
+    1.4121952652931213,
+    1.3976483941078186,
+    1.3831230799357097,
+    1.3682432770729065,
+    1.353762189547221,
+    1.3388014634450276,
+    1.3237505753835042
+  ]
+}

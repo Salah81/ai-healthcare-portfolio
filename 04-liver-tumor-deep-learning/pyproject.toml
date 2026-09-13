@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "liver-ai-research-prototype"
+version = "0.1.0"
+description = "Research prototype for deep-learning liver tumour segmentation and quantitative analysis."
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "scipy>=1.10",
+  "matplotlib>=3.7",
+  "scikit-learn>=1.3",
+  "torch>=2.1",
+]
+
+[project.optional-dependencies]
+medical = ["nibabel>=5.2", "monai>=1.3", "SimpleITK>=2.3"]
+dev = ["pytest>=7.4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

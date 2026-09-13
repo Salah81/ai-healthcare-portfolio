@@ -1,0 +1,11 @@
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+*.pyo
+*.nii
+*.nii.gz
+data/raw/
+data/processed/
+checkpoints/
+*.ckpt

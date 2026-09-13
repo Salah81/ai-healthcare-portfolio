@@ -1,0 +1,16 @@
+experiment: liver_tumor_unet2d_baseline
+seed: 42
+input:
+  modality: CT
+  window_hu: [-150, 250]
+model:
+  architecture: UNet2D
+  input_channels: 1
+  output_channels: 1
+training:
+  optimizer: Adam
+  learning_rate: 0.001
+  loss: Dice + BCE
+validation:
+  metrics: [Dice, IoU, HD95]
+clinical_status: research_prototype_not_for_clinical_use
